@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8BEAE46D-28FB-4AF2-8474-D874DA7171D2}|Blackjack Simulator.pyproj|C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\Blackjack_Simulator.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{8BEAE46D-28FB-4AF2-8474-D874DA7171D2}|Blackjack Simulator.pyproj|solutionrelative:Blackjack_Simulator.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\player.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:player.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\main.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:main.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\deck.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:deck.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\dealer.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:dealer.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\blackjack_strategy.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:blackjack_strategy.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +30,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -27,15 +47,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Blackjack_Simulator.py",
-              "DocumentMoniker": "C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\Blackjack_Simulator.py",
-              "RelativeDocumentMoniker": "Blackjack_Simulator.py",
-              "ToolTip": "C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\Blackjack_Simulator.py",
-              "RelativeToolTip": "Blackjack_Simulator.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAANAAAAAAAAAA==",
+              "Title": "player.py",
+              "DocumentMoniker": "C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\player.py",
+              "RelativeDocumentMoniker": "player.py",
+              "ToolTip": "C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\player.py",
+              "RelativeToolTip": "player.py",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMtSURBVDhPrZS9T1tnFMZ/1/cLGxy7BNuJIeCG2hIiSSWqRmmR8Fh16lhVVVTRIR34Ezo2kSqUqUJeKkHLEqlDWZAyUJZEoUNaoTatXEgsQykGFFyw8de997337RA5MeYqUx/pDOc55zx6znmlF/5PSCmVzjybzX4/NTV1U9f1TvoUKpWKrFard5aXl\u002B/u7e1Vu\u002BtaNzE9PU0ikeimX2J1dVUWi8UvVFWVKysr3xQKhXJn/YwgQKFQ6KZQVZVUKoWu64FsNhtNp9O3LMsKapo2u7Gxcdju8xVMJpPdFIry6jqGYeiTk5MDuq5/IqW0hBBfFwqFOkCgc6gNwzDORPuuqqqytLTE3Nycura2diEUCk2Yphlvz/o63Nzc7KbQNI10Os27N95n4vp7aAGFZv3Emp\u002Bf//tUX2fSxtjYWDdFzRL8lD9kv9qk2bTRA3AxrGoXh4b7A4FXi/oK\u002Bjm0\u002BpI8269xUKnz\u002BOk\u002BwrGJ9Rn6R\u002BNDI/F4vK/d53vDVCp1JioNwaONPfI7ZTzh4AmXaq2hNEQgGA6HQ\u002B1ZX0EA13VxUfjrucO9xwf8tl3m2qUoE6l\u002BzvfqCOEghCAWrV9d\u002Bu7mz17zjyee5w37rry1tQXAbkvnxycn7JZPEMLGdRyE4\u002BA6Np7r4CkKhvIcmuvQWh8n9uWsr8NMJkMmk6Ehezg4riGEg\u002BcINDwiQY1ISCca0nk7FeJasgpuE6x/wN75wNdhPp8HYGe3iWXZeEIw3K8xk20SVI\u002BR0gPpETWOGAwegGi8EHWPI691ODKYwAiAEA63sgbvXPiV8dgzrsQLXBnIM9RbRBH/gqiBWwc9eeQraNs2tm0z8obJ5YEgYVMlds5DkS54NggLPA9cQAZA6tBz1cUY/NZ35VKpBIAJfJ69TMWCRGQLWja4LVAioARBV8DMHGG\u002B\u002BSc9bz1dXFyc9RUcHR09lSuKgumVJLW6gtsC9xB6b4BUQD2/88P93a8ePLj3KJfLNc4ILiwsvPwIOvHZpx9uXzIHU9i/v3iAk1\u002BQfdelG5woP3x4u5jL5RrdM6\u002BFlPKc9Jy7srW9J2vrnrRK21LK\u002B1LKj2dmZlLtvv8AoKdgTW7XN1wAAAAASUVORK5CYII=",
-              "WhenOpened": "2025-09-04T15:50:23.517Z",
+              "WhenOpened": "2025-09-06T06:40:37.883Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.py",
+              "DocumentMoniker": "C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\main.py",
+              "RelativeDocumentMoniker": "main.py",
+              "ToolTip": "C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\main.py",
+              "RelativeToolTip": "main.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMtSURBVDhPrZS9T1tnFMZ/1/cLGxy7BNuJIeCG2hIiSSWqRmmR8Fh16lhVVVTRIR34Ezo2kSqUqUJeKkHLEqlDWZAyUJZEoUNaoTatXEgsQykGFFyw8de997337RA5MeYqUx/pDOc55zx6znmlF/5PSCmVzjybzX4/NTV1U9f1TvoUKpWKrFard5aXl\u002B/u7e1Vu\u002BtaNzE9PU0ikeimX2J1dVUWi8UvVFWVKysr3xQKhXJn/YwgQKFQ6KZQVZVUKoWu64FsNhtNp9O3LMsKapo2u7Gxcdju8xVMJpPdFIry6jqGYeiTk5MDuq5/IqW0hBBfFwqFOkCgc6gNwzDORPuuqqqytLTE3Nycura2diEUCk2Yphlvz/o63Nzc7KbQNI10Os27N95n4vp7aAGFZv3Emp\u002Bf//tUX2fSxtjYWDdFzRL8lD9kv9qk2bTRA3AxrGoXh4b7A4FXi/oK\u002Bjm0\u002BpI8269xUKnz\u002BOk\u002BwrGJ9Rn6R\u002BNDI/F4vK/d53vDVCp1JioNwaONPfI7ZTzh4AmXaq2hNEQgGA6HQ\u002B1ZX0EA13VxUfjrucO9xwf8tl3m2qUoE6l\u002BzvfqCOEghCAWrV9d\u002Bu7mz17zjyee5w37rry1tQXAbkvnxycn7JZPEMLGdRyE4\u002BA6Np7r4CkKhvIcmuvQWh8n9uWsr8NMJkMmk6Ehezg4riGEg\u002BcINDwiQY1ISCca0nk7FeJasgpuE6x/wN75wNdhPp8HYGe3iWXZeEIw3K8xk20SVI\u002BR0gPpETWOGAwegGi8EHWPI691ODKYwAiAEA63sgbvXPiV8dgzrsQLXBnIM9RbRBH/gqiBWwc9eeQraNs2tm0z8obJ5YEgYVMlds5DkS54NggLPA9cQAZA6tBz1cUY/NZ35VKpBIAJfJ69TMWCRGQLWja4LVAioARBV8DMHGG\u002B\u002BSc9bz1dXFyc9RUcHR09lSuKgumVJLW6gtsC9xB6b4BUQD2/88P93a8ePLj3KJfLNc4ILiwsvPwIOvHZpx9uXzIHU9i/v3iAk1\u002BQfdelG5woP3x4u5jL5RrdM6\u002BFlPKc9Jy7srW9J2vrnrRK21LK\u002B1LKj2dmZlLtvv8AoKdgTW7XN1wAAAAASUVORK5CYII=",
+              "WhenOpened": "2025-09-06T06:40:37.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "deck.py",
+              "DocumentMoniker": "C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\deck.py",
+              "RelativeDocumentMoniker": "deck.py",
+              "ToolTip": "C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\deck.py",
+              "RelativeToolTip": "deck.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMtSURBVDhPrZS9T1tnFMZ/1/cLGxy7BNuJIeCG2hIiSSWqRmmR8Fh16lhVVVTRIR34Ezo2kSqUqUJeKkHLEqlDWZAyUJZEoUNaoTatXEgsQykGFFyw8de997337RA5MeYqUx/pDOc55zx6znmlF/5PSCmVzjybzX4/NTV1U9f1TvoUKpWKrFard5aXl\u002B/u7e1Vu\u002BtaNzE9PU0ikeimX2J1dVUWi8UvVFWVKysr3xQKhXJn/YwgQKFQ6KZQVZVUKoWu64FsNhtNp9O3LMsKapo2u7Gxcdju8xVMJpPdFIry6jqGYeiTk5MDuq5/IqW0hBBfFwqFOkCgc6gNwzDORPuuqqqytLTE3Nycura2diEUCk2Yphlvz/o63Nzc7KbQNI10Os27N95n4vp7aAGFZv3Emp\u002Bf//tUX2fSxtjYWDdFzRL8lD9kv9qk2bTRA3AxrGoXh4b7A4FXi/oK\u002Bjm0\u002BpI8269xUKnz\u002BOk\u002BwrGJ9Rn6R\u002BNDI/F4vK/d53vDVCp1JioNwaONPfI7ZTzh4AmXaq2hNEQgGA6HQ\u002B1ZX0EA13VxUfjrucO9xwf8tl3m2qUoE6l\u002BzvfqCOEghCAWrV9d\u002Bu7mz17zjyee5w37rry1tQXAbkvnxycn7JZPEMLGdRyE4\u002BA6Np7r4CkKhvIcmuvQWh8n9uWsr8NMJkMmk6Ehezg4riGEg\u002BcINDwiQY1ISCca0nk7FeJasgpuE6x/wN75wNdhPp8HYGe3iWXZeEIw3K8xk20SVI\u002BR0gPpETWOGAwegGi8EHWPI691ODKYwAiAEA63sgbvXPiV8dgzrsQLXBnIM9RbRBH/gqiBWwc9eeQraNs2tm0z8obJ5YEgYVMlds5DkS54NggLPA9cQAZA6tBz1cUY/NZ35VKpBIAJfJ69TMWCRGQLWja4LVAioARBV8DMHGG\u002B\u002BSc9bz1dXFyc9RUcHR09lSuKgumVJLW6gtsC9xB6b4BUQD2/88P93a8ePLj3KJfLNc4ILiwsvPwIOvHZpx9uXzIHU9i/v3iAk1\u002BQfdelG5woP3x4u5jL5RrdM6\u002BFlPKc9Jy7srW9J2vrnrRK21LK\u002B1LKj2dmZlLtvv8AoKdgTW7XN1wAAAAASUVORK5CYII=",
+              "WhenOpened": "2025-09-06T06:40:37.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dealer.py",
+              "DocumentMoniker": "C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\dealer.py",
+              "RelativeDocumentMoniker": "dealer.py",
+              "ToolTip": "C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\dealer.py",
+              "RelativeToolTip": "dealer.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMtSURBVDhPrZS9T1tnFMZ/1/cLGxy7BNuJIeCG2hIiSSWqRmmR8Fh16lhVVVTRIR34Ezo2kSqUqUJeKkHLEqlDWZAyUJZEoUNaoTatXEgsQykGFFyw8de997337RA5MeYqUx/pDOc55zx6znmlF/5PSCmVzjybzX4/NTV1U9f1TvoUKpWKrFard5aXl\u002B/u7e1Vu\u002BtaNzE9PU0ikeimX2J1dVUWi8UvVFWVKysr3xQKhXJn/YwgQKFQ6KZQVZVUKoWu64FsNhtNp9O3LMsKapo2u7Gxcdju8xVMJpPdFIry6jqGYeiTk5MDuq5/IqW0hBBfFwqFOkCgc6gNwzDORPuuqqqytLTE3Nycura2diEUCk2Yphlvz/o63Nzc7KbQNI10Os27N95n4vp7aAGFZv3Emp\u002Bf//tUX2fSxtjYWDdFzRL8lD9kv9qk2bTRA3AxrGoXh4b7A4FXi/oK\u002Bjm0\u002BpI8269xUKnz\u002BOk\u002BwrGJ9Rn6R\u002BNDI/F4vK/d53vDVCp1JioNwaONPfI7ZTzh4AmXaq2hNEQgGA6HQ\u002B1ZX0EA13VxUfjrucO9xwf8tl3m2qUoE6l\u002BzvfqCOEghCAWrV9d\u002Bu7mz17zjyee5w37rry1tQXAbkvnxycn7JZPEMLGdRyE4\u002BA6Np7r4CkKhvIcmuvQWh8n9uWsr8NMJkMmk6Ehezg4riGEg\u002BcINDwiQY1ISCca0nk7FeJasgpuE6x/wN75wNdhPp8HYGe3iWXZeEIw3K8xk20SVI\u002BR0gPpETWOGAwegGi8EHWPI691ODKYwAiAEA63sgbvXPiV8dgzrsQLXBnIM9RbRBH/gqiBWwc9eeQraNs2tm0z8obJ5YEgYVMlds5DkS54NggLPA9cQAZA6tBz1cUY/NZ35VKpBIAJfJ69TMWCRGQLWja4LVAioARBV8DMHGG\u002B\u002BSc9bz1dXFyc9RUcHR09lSuKgumVJLW6gtsC9xB6b4BUQD2/88P93a8ePLj3KJfLNc4ILiwsvPwIOvHZpx9uXzIHU9i/v3iAk1\u002BQfdelG5woP3x4u5jL5RrdM6\u002BFlPKc9Jy7srW9J2vrnrRK21LK\u002B1LKj2dmZlLtvv8AoKdgTW7XN1wAAAAASUVORK5CYII=",
+              "WhenOpened": "2025-09-06T06:40:37.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "blackjack_strategy.py",
+              "DocumentMoniker": "C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\blackjack_strategy.py",
+              "RelativeDocumentMoniker": "blackjack_strategy.py",
+              "ToolTip": "C:\\Users\\Stephen\\source\\repos\\Blackjack Simulator\\blackjack_strategy.py",
+              "RelativeToolTip": "blackjack_strategy.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMtSURBVDhPrZS9T1tnFMZ/1/cLGxy7BNuJIeCG2hIiSSWqRmmR8Fh16lhVVVTRIR34Ezo2kSqUqUJeKkHLEqlDWZAyUJZEoUNaoTatXEgsQykGFFyw8de997337RA5MeYqUx/pDOc55zx6znmlF/5PSCmVzjybzX4/NTV1U9f1TvoUKpWKrFard5aXl\u002B/u7e1Vu\u002BtaNzE9PU0ikeimX2J1dVUWi8UvVFWVKysr3xQKhXJn/YwgQKFQ6KZQVZVUKoWu64FsNhtNp9O3LMsKapo2u7Gxcdju8xVMJpPdFIry6jqGYeiTk5MDuq5/IqW0hBBfFwqFOkCgc6gNwzDORPuuqqqytLTE3Nycura2diEUCk2Yphlvz/o63Nzc7KbQNI10Os27N95n4vp7aAGFZv3Emp\u002Bf//tUX2fSxtjYWDdFzRL8lD9kv9qk2bTRA3AxrGoXh4b7A4FXi/oK\u002Bjm0\u002BpI8269xUKnz\u002BOk\u002BwrGJ9Rn6R\u002BNDI/F4vK/d53vDVCp1JioNwaONPfI7ZTzh4AmXaq2hNEQgGA6HQ\u002B1ZX0EA13VxUfjrucO9xwf8tl3m2qUoE6l\u002BzvfqCOEghCAWrV9d\u002Bu7mz17zjyee5w37rry1tQXAbkvnxycn7JZPEMLGdRyE4\u002BA6Np7r4CkKhvIcmuvQWh8n9uWsr8NMJkMmk6Ehezg4riGEg\u002BcINDwiQY1ISCca0nk7FeJasgpuE6x/wN75wNdhPp8HYGe3iWXZeEIw3K8xk20SVI\u002BR0gPpETWOGAwegGi8EHWPI691ODKYwAiAEA63sgbvXPiV8dgzrsQLXBnIM9RbRBH/gqiBWwc9eeQraNs2tm0z8obJ5YEgYVMlds5DkS54NggLPA9cQAZA6tBz1cUY/NZ35VKpBIAJfJ69TMWCRGQLWja4LVAioARBV8DMHGG\u002B\u002BSc9bz1dXFyc9RUcHR09lSuKgumVJLW6gtsC9xB6b4BUQD2/88P93a8ePLj3KJfLNc4ILiwsvPwIOvHZpx9uXzIHU9i/v3iAk1\u002BQfdelG5woP3x4u5jL5RrdM6\u002BFlPKc9Jy7srW9J2vrnrRK21LK\u002B1LKj2dmZlLtvv8AoKdgTW7XN1wAAAAASUVORK5CYII=",
+              "WhenOpened": "2025-09-06T06:40:37.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }
