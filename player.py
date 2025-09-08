@@ -1,6 +1,7 @@
 import tkinter as tk
 from blackjack_strategy import PLAYING_STRATEGIES, BETTING_STRATEGIES
 
+
 class Hand:
     def __init__(self, bet_amount):
         self.cards = []
@@ -31,6 +32,7 @@ class Hand:
         if len(self.cards) == 2 and self.hand_value == 21:
             self.has_blackjack = True
 
+
 class Player:
     def __init__(self, master, player_index, initial_balance=1000, default_bet=10):
         self.player_index = player_index
@@ -44,38 +46,47 @@ class Player:
         self.betting_strategy = tk.StringVar(value=list(BETTING_STRATEGIES.keys())[0])
         self.previous_bet_won = None
         self.last_bet_amount = default_bet
+        self.win_streak = 0
 
         # GUI elements
-        self.frame = tk.LabelFrame(master, text=f"Player {player_index + 1}", padx=5, pady=5, bg="#087830", fg="white", font=("Arial", 10, "bold"))
+        self.frame = tk.LabelFrame(master, text=f"Player {player_index + 1}", padx=5, pady=5, bg="#087830", fg="white",
+                                   font=("Arial", 10, "bold"))
         self.frame.grid(row=0, column=player_index, padx=5, pady=5, sticky="nsew")
 
         # --- Settings inside the player frame ---
         settings_frame = tk.Frame(self.frame, bg="#087830")
         settings_frame.pack(pady=5, fill="x")
 
-        tk.Label(settings_frame, text="Skill:", font=("Arial", 8), bg="#087830", fg="white").grid(row=0, column=0, sticky="w")
-        skill_scale = tk.Scale(settings_frame, from_=0.0, to=1.0, resolution=0.1, orient=tk.HORIZONTAL, variable=self.skill_level, bg="#087830", fg="white", troughcolor="#065c25", highlightthickness=0)
+        tk.Label(settings_frame, text="Skill:", font=("Arial", 8), bg="#087830", fg="white").grid(row=0, column=0,
+                                                                                                  sticky="w")
+        skill_scale = tk.Scale(settings_frame, from_=0.0, to=1.0, resolution=0.1, orient=tk.HORIZONTAL,
+                               variable=self.skill_level, bg="#087830", fg="white", troughcolor="#065c25",
+                               highlightthickness=0)
         skill_scale.grid(row=0, column=1, sticky="ew")
 
-        tk.Label(settings_frame, text="Play:", font=("Arial", 8), bg="#087830", fg="white").grid(row=1, column=0, sticky="w")
+        tk.Label(settings_frame, text="Play:", font=("Arial", 8), bg="#087830", fg="white").grid(row=1, column=0,
+                                                                                                 sticky="w")
         play_menu = tk.OptionMenu(settings_frame, self.playing_strategy, *PLAYING_STRATEGIES.keys())
         play_menu.config(font=("Arial", 8), width=8)
         play_menu.grid(row=1, column=1, sticky="ew", pady=1)
 
-        tk.Label(settings_frame, text="Bet:", font=("Arial", 8), bg="#087830", fg="white").grid(row=2, column=0, sticky="w")
+        tk.Label(settings_frame, text="Bet:", font=("Arial", 8), bg="#087830", fg="white").grid(row=2, column=0,
+                                                                                                sticky="w")
         bet_menu = tk.OptionMenu(settings_frame, self.betting_strategy, *BETTING_STRATEGIES.keys())
         bet_menu.config(font=("Arial", 8), width=8)
         bet_menu.grid(row=2, column=1, sticky="ew", pady=1)
-        
+
         settings_frame.grid_columnconfigure(1, weight=1)
 
         self.hand_container = tk.Frame(self.frame, bg="#087830")
         self.hand_container.pack(pady=5)
-        
-        self.balance_label = tk.Label(self.frame, text=f"Balance: ${self.balance}", font=("Arial", 9), bg="#087830", fg="white")
+
+        self.balance_label = tk.Label(self.frame, text=f"Balance: ${self.balance}", font=("Arial", 9), bg="#087830",
+                                      fg="white")
         self.balance_label.pack(anchor="w")
 
-        self.recommendation_label = tk.Label(self.frame, text="Rec: -", fg="#ffc107", font=("Arial", 10, "italic"), bg="#087830")
+        self.recommendation_label = tk.Label(self.frame, text="Rec: -", fg="#ffc107", font=("Arial", 10, "italic"),
+                                             bg="#087830")
         self.recommendation_label.pack()
 
     def place_bet(self, get_bet_amount_func):
@@ -111,7 +122,7 @@ class Player:
             hand_frame = tk.Frame(self.hand_container, bg="#087830")
             hand_frame.pack(pady=5)
 
-            title_text = f"Hand {i+1} ({hand.hand_value}) - Bet: ${hand.bet}"
+            title_text = f"Hand {i + 1} ({hand.hand_value}) - Bet: ${hand.bet}"
             title_label = tk.Label(hand_frame, text=title_text, font=("Arial", 10, "bold"), fg="white", bg="#087830")
             title_label.pack()
 
@@ -121,11 +132,13 @@ class Player:
             for _, card_repr in hand.cards:
                 suit = card_repr[-1]
                 color = "red" if suit in ['♥', '♦'] else "black"
-                card_label = tk.Label(cards_frame, text=card_repr, font=("Arial", 24, "bold"), fg=color, bg="white", padx=5, pady=5, relief="raised", borderwidth=2)
+                card_label = tk.Label(cards_frame, text=card_repr, font=("Arial", 24, "bold"), fg=color, bg="white",
+                                      padx=5, pady=5, relief="raised", borderwidth=2)
                 card_label.pack(side="left", padx=2, pady=2)
-            
+
             if hand.result_text:
-                result_label = tk.Label(hand_frame, text=hand.result_text, font=("Arial", 10, "bold"), fg=hand.result_color, bg="#087830")
+                result_label = tk.Label(hand_frame, text=hand.result_text, font=("Arial", 10, "bold"),
+                                        fg=hand.result_color, bg="#087830")
                 result_label.pack()
 
     def record_win(self, hand, payout_multiplier=1):
@@ -135,6 +148,7 @@ class Player:
 
     def record_loss(self, hand):
         self.previous_bet_won = False
+        self.win_streak = 0
 
     def record_push(self, hand):
         self.balance += hand.bet

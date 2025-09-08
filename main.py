@@ -5,13 +5,14 @@ from player import Player, Hand
 from dealer import Dealer
 from blackjack_strategy import get_recommendation, get_bet_amount
 
+
 class BlackjackSimulator:
     def __init__(self, root):
         self.root = root
         self.root.title("Blackjack Simulator")
         self.root.configure(bg="#087830")
 
-        self.deck = Deck()
+        self.deck = Deck(num_decks=8)
         self.players = []
         self.dealer = Dealer(self.root)
 
@@ -27,20 +28,27 @@ class BlackjackSimulator:
 
     def create_widgets(self):
         # Settings Frame
-        self.settings_frame = tk.LabelFrame(self.root, text="Game Settings", padx=10, pady=10, bg="#087830", fg="white", font=("Arial", 10, "bold"))
+        self.settings_frame = tk.LabelFrame(self.root, text="Game Settings", padx=10, pady=10, bg="#087830", fg="white",
+                                            font=("Arial", 10, "bold"))
         self.settings_frame.pack(pady=10, padx=10)
 
-        tk.Label(self.settings_frame, text="Number of Players (1-7):", bg="#087830", fg="white").grid(row=0, column=0, sticky="w", pady=2)
+        tk.Label(self.settings_frame, text="Number of Players (1-7):", bg="#087830", fg="white").grid(row=0, column=0,
+                                                                                                      sticky="w",
+                                                                                                      pady=2)
         self.num_players_entry = tk.Entry(self.settings_frame, width=5)
         self.num_players_entry.insert(0, "1")
         self.num_players_entry.grid(row=0, column=1, sticky="w")
 
-        tk.Label(self.settings_frame, text="Starting Balance per Player:", bg="#087830", fg="white").grid(row=1, column=0, sticky="w", pady=2)
+        tk.Label(self.settings_frame, text="Starting Balance per Player:", bg="#087830", fg="white").grid(row=1,
+                                                                                                          column=0,
+                                                                                                          sticky="w",
+                                                                                                          pady=2)
         self.starting_balance_entry = tk.Entry(self.settings_frame, width=10)
         self.starting_balance_entry.insert(0, "1000")
         self.starting_balance_entry.grid(row=1, column=1, sticky="w")
 
-        tk.Label(self.settings_frame, text="Default Bet per Player:", bg="#087830", fg="white").grid(row=2, column=0, sticky="w", pady=2)
+        tk.Label(self.settings_frame, text="Default Bet per Player:", bg="#087830", fg="white").grid(row=2, column=0,
+                                                                                                     sticky="w", pady=2)
         self.default_bet_entry = tk.Entry(self.settings_frame, width=10)
         self.default_bet_entry.insert(0, "10")
         self.default_bet_entry.grid(row=2, column=1, sticky="w")
@@ -68,7 +76,7 @@ class BlackjackSimulator:
 
         self.control_frame = tk.Frame(self.game_frame, bg="#087830")
         self.control_frame.pack(pady=10)
-        
+
         self.hit_button = tk.Button(self.control_frame, text="Hit", command=self.hit)
         self.hit_button.pack(side="left", padx=3)
         self.stand_button = tk.Button(self.control_frame, text="Stand", command=self.stand)
@@ -77,20 +85,30 @@ class BlackjackSimulator:
         self.double_down_button.pack(side="left", padx=3)
         self.split_button = tk.Button(self.control_frame, text="Split", command=self.split)
         self.split_button.pack(side="left", padx=3)
-        self.deal_button = tk.Button(self.control_frame, text="Deal New Round", command=self.deal_initial_hands, state=tk.DISABLED)
+        self.deal_button = tk.Button(self.control_frame, text="Deal New Round", command=self.deal_initial_hands,
+                                     state=tk.DISABLED)
         self.deal_button.pack(side="left", padx=3)
-        self.autoplay_button = tk.Button(self.control_frame, text="Autoplay Off", command=self.toggle_autoplay, bg="#555", fg="white")
+        self.autoplay_button = tk.Button(self.control_frame, text="Autoplay Off", command=self.toggle_autoplay,
+                                         bg="#555", fg="white")
         self.autoplay_button.pack(side="left", padx=10)
+        self.main_menu_button = tk.Button(self.control_frame, text="Main Menu", command=self.go_to_main_menu)
+        self.main_menu_button.pack(side="left", padx=10)
 
-        self.status_bar = tk.Label(self.root, text="Game: Enter settings and click Start Game", bd=1, relief=tk.SUNKEN, anchor=tk.W, bg="#087830", fg="white")
+        self.status_bar = tk.Label(self.root, text="Game: Enter settings and click Start Game", bd=1, relief=tk.SUNKEN,
+                                   anchor=tk.W, bg="#087830", fg="white")
         self.status_bar.pack(side=tk.BOTTOM, fill=tk.X)
+
+    def go_to_main_menu(self):
+        if self.autoplay:
+            self.toggle_autoplay()
+        self.setup_game_settings()
 
     def toggle_autoplay(self):
         self.autoplay = not self.autoplay
         state = "On" if self.autoplay else "Off"
         color = "#4caf50" if self.autoplay else "#555"
         self.autoplay_button.config(text=f"Autoplay {state}", bg=color)
-        
+
         if self.autoplay and self.deal_button.cget('state') == tk.DISABLED:
             self.check_current_player_status()
         elif self.autoplay and self.deal_button.cget('state') == tk.NORMAL:
@@ -136,7 +154,7 @@ class BlackjackSimulator:
             player = Player(self.player_container, i, starting_balance, default_bet)
             self.players.append(player)
             self.player_container.grid_columnconfigure(i, weight=1, uniform="player")
-        
+
         self.enable_player_controls(False)
 
     def deal_initial_hands(self):
@@ -145,12 +163,13 @@ class BlackjackSimulator:
         self.deck = Deck()
         self.deck.shuffle()
         self.dealer.reset()
-        
+
         all_players_can_bet = True
         for player in self.players:
             player.reset()
             if not player.place_bet(get_bet_amount):
-                self.status_bar.config(text=f"Player {player.player_index + 1} has insufficient funds. Autoplay stopped.", fg="#ff6b6b")
+                self.status_bar.config(
+                    text=f"Player {player.player_index + 1} has insufficient funds. Autoplay stopped.", fg="#ff6b6b")
                 if self.autoplay:
                     self.toggle_autoplay()
                 all_players_can_bet = False
@@ -168,7 +187,7 @@ class BlackjackSimulator:
         self.current_player_index = 0
         self.current_hand_index = 0
         self.status_bar.config(text="Game: Dealing cards...", fg="white")
-        
+
         self.deal_button.config(state=tk.DISABLED)
 
         self.check_current_player_status()
@@ -179,7 +198,7 @@ class BlackjackSimulator:
             return
 
         current_player = self.players[self.current_player_index]
-        
+
         if self.current_hand_index >= len(current_player.hands):
             self.next_turn_or_hand()
             return
@@ -204,9 +223,9 @@ class BlackjackSimulator:
             self.root.after(self.autoplay_speed, self.next_turn_or_hand)
             return
         elif current_hand.hand_value == 21:
-             current_hand.status = "stand"
-             self.root.after(self.autoplay_speed, self.next_turn_or_hand)
-             return
+            current_hand.status = "stand"
+            self.root.after(self.autoplay_speed, self.next_turn_or_hand)
+            return
 
         if self.autoplay:
             self.perform_autoplay_action(recommendation)
@@ -239,7 +258,8 @@ class BlackjackSimulator:
         if final_recommendation == "Double Down" and not self.is_action_possible('double'):
             action_func = self.hit
         elif final_recommendation == "Split" and not self.is_action_possible('split'):
-            new_rec = get_recommendation(hand, self.dealer.get_up_card()[0], player.playing_strategy.get(), ignore_pairs=True)
+            new_rec = get_recommendation(hand, self.dealer.get_up_card()[0], player.playing_strategy.get(),
+                                         ignore_pairs=True)
             action_func = action_map.get(new_rec, self.hit)
 
         if action_func:
@@ -252,7 +272,7 @@ class BlackjackSimulator:
             if self.current_hand_index >= len(current_player.hands):
                 self.current_player_index += 1
                 self.current_hand_index = 0
-        
+
         self.check_current_player_status()
 
     def get_current_hand(self):
@@ -389,7 +409,7 @@ class BlackjackSimulator:
 
         current_total_balance = sum(p.balance for p in self.players)
         profit_loss = current_total_balance - self.total_starting_balance
-        
+
         color = "#4caf50" if profit_loss > 0 else "#ff6b6b" if profit_loss < 0 else "white"
         self.profit_loss_label.config(text=f"Total P/L: ${profit_loss:+.2f}", fg=color)
 
@@ -398,6 +418,7 @@ class BlackjackSimulator:
             self.root.after(2000, self.deal_initial_hands)
         else:
             self.deal_button.config(state=tk.NORMAL)
+
 
 if __name__ == "__main__":
     root = tk.Tk()
