@@ -1,4 +1,6 @@
 import tkinter as tk
+from hand_utils import calculate_hand_value
+from constants import BG_COLOR, WHITE, RED_SUIT_COLOR, BLACK_SUIT_COLOR, DARK_GREEN
 
 class Dealer:
     def __init__(self, root):
@@ -6,6 +8,7 @@ class Dealer:
         self.hand = []
         self.hand_value = 0
         self.is_busted = False
+        self.has_blackjack = False
         self.hole_card_hidden = True
 
         self.frame = None
@@ -14,10 +17,10 @@ class Dealer:
 
     def create_gui_elements(self, frame):
         self.frame = frame
-        self.frame.config(bg="#087830", fg="white", font=("Arial", 10, "bold"))
-        self.title_label = tk.Label(self.frame, text="Dealer's Hand", font=("Arial", 10, "bold"), fg="white", bg="#087830")
+        self.frame.config(bg=BG_COLOR, fg=WHITE, font=("Arial", 10, "bold"))
+        self.title_label = tk.Label(self.frame, text="Dealer's Hand", font=("Arial", 10, "bold"), fg=WHITE, bg=BG_COLOR)
         self.title_label.pack()
-        self.hand_container = tk.Frame(self.frame, bg="#087830")
+        self.hand_container = tk.Frame(self.frame, bg=BG_COLOR)
         self.hand_container.pack(pady=5)
 
     def add_card(self, card):
@@ -25,22 +28,7 @@ class Dealer:
         self._calculate_hand_value()
 
     def _calculate_hand_value(self):
-        total = 0
-        aces = 0
-        for val, _ in self.hand:
-            if val == 1:  # Ace
-                aces += 1
-            else:
-                total += val
-
-        for _ in range(aces):
-            if total + 11 <= 21:
-                total += 11
-            else:
-                total += 1
-
-        self.hand_value = total
-        self.is_busted = self.hand_value > 21
+        self.hand_value, self.is_busted, self.has_blackjack = calculate_hand_value(self.hand)
 
     def get_hand_value(self):
         return self.hand_value
@@ -55,6 +43,7 @@ class Dealer:
         self.hand = []
         self.hand_value = 0
         self.is_busted = False
+        self.has_blackjack = False
         self.hole_card_hidden = True
         if self.hand_container:
             self.update_gui()
@@ -79,16 +68,16 @@ class Dealer:
         self.title_label.config(text=f"Dealer's Hand {displayed_value}")
 
         if not self.hand:
-            placeholder = tk.Frame(self.hand_container, height=50, bg="#087830")
+            placeholder = tk.Frame(self.hand_container, height=50, bg=BG_COLOR)
             placeholder.pack()
             return
 
         for i, card in enumerate(self.hand):
             if self.hole_card_hidden and i == 1:
-                card_label = tk.Label(self.hand_container, text="", width=4, height=2, bg="#065c25", relief="raised", borderwidth=2)
+                card_label = tk.Label(self.hand_container, text="", width=4, height=2, bg=DARK_GREEN, relief="raised", borderwidth=2)
             else:
                 _, card_repr = card
                 suit = card_repr[-1]
-                color = "red" if suit in ['♥', '♦'] else "black"
+                color = RED_SUIT_COLOR if suit in ['♥', '♦'] else BLACK_SUIT_COLOR
                 card_label = tk.Label(self.hand_container, text=card_repr, font=("Arial", 24, "bold"), fg=color, bg="white", padx=5, pady=5, relief="raised", borderwidth=2)
             card_label.pack(side="left", padx=2, pady=2)

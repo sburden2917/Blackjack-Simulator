@@ -110,7 +110,7 @@ def one_three_two_six(player, default_bet):
         player.win_streak = 0
         return default_bet
 
-    player.win_streak += 1
+    # win_streak is incremented in record_win(), so use current value
     multipliers = {1: 1, 2: 3, 3: 2, 4: 6}
     multiplier = multipliers.get(player.win_streak, 1)
     if player.win_streak > 4:
@@ -130,4 +130,6 @@ BETTING_STRATEGIES = {
 def get_bet_amount(player, default_bet, strategy_name="Flat"):
     func = BETTING_STRATEGIES.get(strategy_name, flat_betting)
     bet_amount = func(player, default_bet)
-    return min(bet_amount, player.balance)
+    # Ensure bet is positive and doesn't exceed balance
+    bet_amount = max(1, min(bet_amount, player.balance))
+    return bet_amount

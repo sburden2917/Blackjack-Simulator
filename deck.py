@@ -1,7 +1,8 @@
 import random
+from constants import DEFAULT_NUM_DECKS
 
 class Deck:
-    def __init__(self, num_decks=8):
+    def __init__(self, num_decks=DEFAULT_NUM_DECKS):
         self.num_decks = num_decks
         self.cards = []
         self.reset()
@@ -24,7 +25,7 @@ class Deck:
 
     def deal_card(self):
         if not self.cards:
-            print("Reshuffling deck...")
+            # Deck is empty, reshuffle
             self.reset()
         return self.cards.pop()
 
